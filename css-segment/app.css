@@ -1,0 +1,11 @@
+h1 {
+    color: rgba(223, 140, 33, 0.637);
+}
+button{
+    color:blueviolet;
+    outline-width: 6px;
+    background-color: aqua;
+}
+p {
+    color: orangered;
+}
