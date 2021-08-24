@@ -1,0 +1,77 @@
+/* Universal Selector (not commonly used)
+ {
+    color: blue;
+} */
+body {
+    background-color: #ced4da;
+}
+header nav span{
+    float:right;
+}
+/* Example of attribute selector */
+input[type="password"] {
+    color:cadetblue;
+}
+button {
+    /* font-size: 20px; */
+    background-color: #219ebc;
+}
+button:hover {
+    background-color: #45aac4;
+}
+
+/* ID selector; Try to not use these too much! */
+#signup {
+    background-color: #ffb703;
+    color: #023047;
+}
+#signup:hover {
+    background-color: #ffc32a;
+}
+h1, h2 {
+    font-family: sans-serif;
+    color: #023047;
+}
+/* Class Selector, any tag with this class will reveice this formating */
+.tag {
+    background-color:#606c38;
+    color: #fefae0;
+    font-size: 75%;
+
+}
+main span {
+    color: #fb8500;
+}
+/* Good but not good enough */
+/* span a{
+    color:#ca6c00;
+} */
+.post a {
+    color:#ca6c00;
+}
+footer {
+    line-height: 2;
+    background-color: #023047;
+}
+footer a,li {
+    letter-spacing: 2px;
+    color: #fefae0;
+}
+h2 + button  {
+    text-transform: capitalize;
+}
+footer nav div {
+    text-decoration: underline ;
+    color: #fefae0;
+}
+footer > div {
+    text-align: center;
+    color: #9b9889;
+    font-family: monospace;
+}
+a {
+    text-decoration:none;
+}
+a:hover {
+    text-decoration: underline;
+}

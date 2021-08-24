@@ -6,14 +6,18 @@ text-decoration
 line-height
 letter-spacing 
 */
-
 h1 {
     text-align: center;                                                     
     width: 50%;
     background-color:rgb(196, 196, 58);
     text-decoration: rgb(143, 40, 40) underline dotted;
+    letter-spacing: 10px;
 }
 h2 {
+font-size: 35px;  /* Don't use px (absolute size) for responsive websites */
+font-family: Papyrus, fantasy;
+}
+h3 {
     font-weight: normal;
 }
 p {
@@ -21,8 +25,10 @@ p {
 }
 a {
     text-decoration: none;
-    
 }
 p{
-    line-height: 20px;
+    line-height: 1.75;
+}
+article {
+    background-color: chartreuse;
 }
