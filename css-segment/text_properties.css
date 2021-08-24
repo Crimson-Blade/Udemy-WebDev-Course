@@ -1,0 +1,28 @@
+/*
+TEXT PROPERTIES
+text-align
+font-weight
+text-decoration
+line-height
+letter-spacing 
+*/
+
+h1 {
+    text-align: center;                                                     
+    width: 50%;
+    background-color:rgb(196, 196, 58);
+    text-decoration: rgb(143, 40, 40) underline dotted;
+}
+h2 {
+    font-weight: normal;
+}
+p {
+    font-weight: bold;
+}
+a {
+    text-decoration: none;
+    
+}
+p{
+    line-height: 20px;
+}
