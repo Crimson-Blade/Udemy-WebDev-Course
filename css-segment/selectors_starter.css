@@ -19,6 +19,9 @@ button {
 button:hover {
     background-color: #45aac4;
 }
+button:active {
+    background-color: #75b1c0;
+}
 
 /* ID selector; Try to not use these too much! */
 #signup {
@@ -27,6 +30,9 @@ button:hover {
 }
 #signup:hover {
     background-color: #ffc32a;
+}
+#signup:active {
+    background-color: #fad370;
 }
 h1, h2 {
     font-family: sans-serif;
@@ -48,6 +54,10 @@ main span {
 } */
 .post a {
     color:#ca6c00;
+    font-weight: 700;
+}
+.post a::before{
+    content: "/u/ ";
 }
 footer {
     line-height: 2;
@@ -74,4 +84,14 @@ a {
 }
 a:hover {
     text-decoration: underline;
+}
+.post:nth-of-type(2n-1){
+    background-color: #adc1d4;
+}
+h2::first-letter {
+    font-size: 4ex;
+    font-weight: bold;
+}
+h2 + p::first-line{
+    color: #0382c2;
 }

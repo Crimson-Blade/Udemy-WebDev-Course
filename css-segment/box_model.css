@@ -1,0 +1,43 @@
+h1 {
+    border-left: 4px solid black;
+    width: 300px;
+    padding-left: 5px;
+    background-color: rgb(182, 222, 248);
+}
+button {
+    padding: 0px 20px;
+    margin: 0 5em 0;
+}
+article {
+    width: 300px;
+    height: 300px;
+}
+.art0 {
+    border-left: 6px solid #005282;
+    line-height: 1.4;
+    margin: 0 0 24px;
+    padding: 24px;
+    background-color: rgb(224, 224, 224);
+}
+.art1 {
+    margin: 0 0 24px;
+    border-width: thick;
+    border-color: red;
+    border-style: inset;
+    background-color: coral;
+    border-radius: 5%;
+   /* box-sizing:border-box;  Makes the entire box fit within the content width*/
+}
+.art2 {
+    margin: 0 0 24px;
+    background-color: chocolate;
+    border-width: thick;
+    border-radius: 10px;
+    border-color: crimson;
+    border-style: solid dotted inset solid;
+}
+.art3 {
+    background-color: rgb(170, 85, 24);
+    border: thick dotted green;
+    margin: 0 0 24px;
+}
