@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table Example</title>
+</head>
+
+<body>
+    <nav>
+        <a href="First.html">&lt;- Go back </a>
+    </nav>
+    <h1>Tables</h1>
+    <hr>
+    <h2>Table Elements</h2>
+    <ul>
+        <li>&lt;table&gt;</li>
+        <li>&lt;td&gt;</li>
+        <li>&lt;tr&gt;</li>
+        <li>&lt;th&gt;</li>
+        <li>&lt;thead&gt;</li>
+        <li>&lt;tbody&gt;</li>
+        <li>&lt;tfoot&gt;</li>
+        <li>&lt;colgroup&gt;</li>
+        <li>&lt;caption&gt;</li>
+    </ul>
+    <h2>Version 1: A Table</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Avg. Weight</th>
+                <th>Flight</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Ostrich</td>
+                <td>104(230)</td>
+                <td>No</td>
+            </tr>
+            <tr>
+                <td>Samoli ostrich</td>
+                <td>90(200)</td>
+                <td>No </td>
+            </tr>
+            <tr>
+                <td>Wild Turkey</td>
+                <td>39(29.8)</td>
+                <td>Yes</td>
+            </tr>
+        </tbody>
+
+    </table>
+    <h2>Version 2: A Table (using colspan and rowspan)</h2>
+    <table>
+        <thead>
+            <tr>
+                <th rowspan="2">Name</th>
+                <th colspan="2">Avg. Weight</th>
+                <th rowspan="2">Flight</th>
+            </tr>
+            <tr>
+                <th>KG</th>
+                <th>LB</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Ostrich</td>
+                <td>104</td>
+                <td>230</td>
+                <td>No</td>
+            </tr>
+            <tr>
+                <td>Samoli ostrich</td>
+                <td>90</td>
+                <td>200</td>
+                <td>No </td>
+            </tr>
+            <tr>
+                <td>Wild Turkey</td>
+                <td>39</td>
+                <td>29.8</td>
+                <td>Yes</td>
+            </tr>
+        </tbody>
+
+    </table>
+    <h3>A table with thead, tbody,tfoot</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Items</th>
+                <th scope="col">Expenditure</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">Donuts</th>
+                <td>3,000</td>
+            </tr>
+            <tr>
+                <th scope="row">Stationery</th>
+                <td>18,000</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <th scope="row">Totals</th>
+                <td>21,000</td>
+            </tr>
+        </tfoot>
+    </table>
+
+
+
+</body>
+
+</html>

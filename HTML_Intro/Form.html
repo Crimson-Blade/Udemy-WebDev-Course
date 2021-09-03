@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms</title>
+</head>
+
+<body>
+    <nav><a href="First.html">
+            &lt;- Go back </a></nav>
+    <h1>Form Demo</h1>
+    <br>
+
+    <!-- Text inputs -->
+
+    <form action="/search/">
+        <div>
+            <label for="username">Enter your Username</label>
+            <input type="text" placeholder="username" name="username" id="username">
+        </div>
+        <div>
+            <label for="password">Enter your password</label>
+            <input type="password" placeholder="password" name="password" id="password">
+        </div>
+        <div>
+            <label for="color">
+                <input type="color" name="" id="color">
+            </label>
+        </div>
+        <p>
+            First type of submit button (prefered):
+            <button type="submit">Submit</button>
+        </p>
+
+        <p>
+            Second type of submit button:
+            <input type="submit" value="Click me!!">
+        </p>
+        <p><button type="button">This button won't submit!</button></p>
+
+    </form>
+
+    <!-- Hijacking Google search! -->
+
+    <p>
+    <form action="https://google.com/search" method="get">
+        <label for="googlesearch">Search the Web: </label>
+        <input type="search" placeholder="Powered by Google" name="q" id="googlesearch">
+    </form>
+    </p>
+
+    <!-- Hijacking Reddit Search! -->
+
+    <form action="https://reddit.com/search" method="get">
+        <label for="redditsearch">Search Reddit: </label>
+        <input type="search" placeholder="Powered by Reddit" name="q" id="redditsearch">
+    </form>
+
+    <!-- checkboxes, radio buttons, selection, range -->
+
+    </p>
+    <h2>Preferences</h2>
+    <form action="/birds/">
+        <input type="checkbox" name="tos" id="tos">
+        <label for="tos">I agree to the TOS</label>
+
+        <p>Select a theme</p>
+        <div><input type="radio" id="gtk+" name="theme" value="gtk+" checked><label for="gtk+">Gtk+</label></div>
+        <div><input type="radio" id="light" name="theme" value="light"><label for="light">Light</label></div>
+        <div><input type="radio" id="dark" name="theme" value="dark"><label for="dark">Dark</label></div>
+
+        <p>which is your favorite pet?</p>
+        <p>
+            <select name="pet-selection" id="pet">
+                <option value="">--Please choose an option--</option>
+                <option value="dog">Dog</option>
+                <option value="cat">Cat</option>
+                <option value="hamster">Hamster</option>
+                <option value="parrot">Parrot</option>
+                <option value="spider">Spider</option>
+                <option value="goldfish">Goldfish</option>
+            </select>
+        </p>
+
+        <p>Audio settings:</p>
+
+        <div>
+            <input type="range" id="volume" name="volume" min="0" max="11">
+            <label for="volume">Volume</label>
+        </div>
+
+        <div>
+            <input type="range" id="cowbell" name="cowbell" min="0" max="100" value="90" step="10">
+            <label for="cowbell">Cowbell</label>
+        </div>
+        <p>
+            <label for="story">Tell us your story:</label>
+
+            <textarea id="story" name="story" rows="5" cols="33">It was a dark and stormy night...</textarea>
+        </p>
+        <button type="submit">Confirm!</button>
+    </form>
+    <h2>Validations Demo</h2>
+    <form action="">
+        <label for="first">* Enter first name: </label><input type="text" id="first" name="first" required>
+
+        <p>
+            <label for="usr">* Username:</label> <input type="text" id="usr" name="usr" required minlength="5"
+                maxlength="20">
+        </p>
+        <p><label for="email">Enter an email: </label> <input type="email" name="email" id="email" required></p>
+        <button type="submit">Submit</button>
+    </form>
+
+</body>
+
+</html>
