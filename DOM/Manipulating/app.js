@@ -23,3 +23,5 @@ for (let link of allLinks) {
     link.style.textDecorationColor = 'magenta';
     link.style.textDecorationStyle = 'wavy'
 }
+const p = document.querySelectorAll('p');
+// https://i.imgur.com/Q7gW1Q9.jpeg
