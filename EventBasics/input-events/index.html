@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <h1>Enter Your Username</h1>
+  <label for="username">Username</label>
+  <input type="text" id="username">
+  <script>
+    const input = document.querySelector("input");
+    const h1 = document.querySelector('h1');
+    let originalInnerText = h1.innerText;
+    input.addEventListener('input', (e) => {
+      let inputText = e.target.value;
+      // console.log(inputText === '');
+      if (inputText !== '') {
+        h1.innerText = `Welcome, ${inputText}`;
+      }
+      else
+        h1.innerText = originalInnerText;
+    })
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <h1>My Form!</h1>
+  <div>
+    <form action="/shelter" class="shelterForm">
+      <input name="name-input" placeholder="Enter Names" label="shelter" type="text" id="inputted-name">
+      <button type="submit">ds</button>
+
+      <h2>Names!</h2>
+      <ul>
+      </ul>
+    </form>
+
+  </div>
+  <script>
+    const form = document.querySelector(".shelterForm");
+    const textInput = document.querySelector("#inputted-name");
+    const list = document.querySelector("ul");
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      let name = textInput.value;
+      const newLI = document.createElement("li");
+      newLI.innerText = name;
+      console.log(newLI);
+      list.append(newLI);
+
+    })
+  </script>
+</body>
+
+</html>
