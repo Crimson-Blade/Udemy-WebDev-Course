@@ -51,7 +51,7 @@ ul {
 } */
 
 
-
+/* 
 h1 {
     color: red;
 }
@@ -70,7 +70,7 @@ h1 {
     h1 {
         color: green;
     }
-}
+} */
 
 /* @media (orientation: landscape) {
  body {
@@ -78,7 +78,7 @@ h1 {
  }
 } */
 
-
+/* 
 @media (max-width: 768px){
     h1 {
         font-size: 4em;
@@ -93,4 +93,4 @@ h1 {
     h1 {
         font-size: 3em;
     }
-}
+} */
