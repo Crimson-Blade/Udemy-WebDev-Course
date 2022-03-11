@@ -11,13 +11,14 @@
 //         console.log("OH NO! ERROR!", e)
 //     })
 
-
+console.log("something");
 const fetchBitcoinPrice = async () => {
     try {
-        const res = await fetch('https://api.cryptonator.com/api/ticker/btc-usd');
-        const data = await res.json();
-        console.log(data.ticker.price)
+        await fetch('https://icanhazdadjoke.com/', { headers: { Accept: 'application/json' } })
+            .then(response => response.json())
+            .then(data => console.log(data.joke));
     } catch (e) {
         console.log("SOMETHING WENT WRONG!!!", e)
     }
 }
+fetchBitcoinPrice();
