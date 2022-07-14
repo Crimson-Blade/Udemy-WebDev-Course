@@ -8,5 +8,12 @@
 </head>
 <body>
     <h1>Random Number: <%= randomNumber %> </h1>
+    <% if(randomNumber %2 == 0) {%>
+        <h2>Even Number</h2>
+    <% } else { %>
+        <h2>Odd number</h2>
+    <% } %> 
+
+
 </body>
 </html>

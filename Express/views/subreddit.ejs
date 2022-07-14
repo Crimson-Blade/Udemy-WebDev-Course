@@ -4,9 +4,24 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= subreddit %> </title>
+    <link rel="stylesheet" href="/app.css">
+    <title><%= name %> </title>
 </head>
 <body>
-    <h1>You are browsing r/<%= subreddit %> </h1>
+    <h1>You are browsing r/<%= name %> </h1>
+    <h2><%= description %> </h2>
+    <br>
+    <h3 style="display:inline-block ;">Members: <%= subscribers %>     </h3>
+    <h3 style="display:inline-block ;">Online: <%= online %></h3>
+    <% for(let post of posts){ %>
+        <div style="padding:10px ;">
+            <div>Posted by <%= post.author %></div>
+            <div><b><%= post.title %></b></div>
+             <% if(post.img) { %>
+                <div><img src="<%= post.img %>" alt=""></div>
+            <% } %>    
+        </div>
+    <% } %>
+
 </body>
 </html>
