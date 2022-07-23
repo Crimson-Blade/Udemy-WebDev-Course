@@ -49,3 +49,4 @@ app.get('/api/random',(req,res)=>{
     let randomNumber = parseInt(Math.random()*100)
     res.send({randomNumber}); // here, both the key and value in the object are the same hence ':' is not required
 })
+app.get('*',(req,res) => res.status(404).render('pageNotFound'))
