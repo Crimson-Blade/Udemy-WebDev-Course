@@ -1,0 +1,22 @@
+{
+  "name": "udemy-webdev-course",
+  "version": "1.0.0",
+  "description": "Practice files, Course projects, and notes  OgO shoo, get outta here.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Crimson-Blade/Udemy-WebDev-Course.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Crimson-Blade/Udemy-WebDev-Course/issues"
+  },
+  "homepage": "https://github.com/Crimson-Blade/Udemy-WebDev-Course#readme",
+  "devDependencies": {
+    "eslint": "^8.20.0"
+  }
+}
