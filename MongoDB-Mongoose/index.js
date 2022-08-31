@@ -25,21 +25,21 @@ mongoose.connect('mongodb://localhost:27017/test')
     //creating model
     const Bio = new mongoose.model('Bio',bioSchema);
 
-    // const LanceBio = new Bio({
-    //     _id: new mongoose.Types.ObjectId(),
-    //     name: { first: 'Lance', last: 'Barreto' },
-    //     birth: new Date('2003-05-05T00:00:00') ,
-    //     death: new Date('2103-05-05T00:00:00'),
-    //     contribs: [ 'JS','Cpp','Linux' ],
-    //     awards: [
-    //         {
-    //         award: 'Biggest Failure Award',
-    //         year: 2010,
-    //         by: 'MIT'
-    //         }
-    //     ]
-    // })
-    // LanceBio.save();
+    const LanceBio = new Bio({
+        _id: new mongoose.Types.ObjectId(),
+        name: { first: 'Lance', last: 'Barreto' },
+        birth: new Date('2003-05-05T00:00:00') ,
+        death: new Date('2103-05-05T00:00:00'),
+        contribs: [ 'JS','Cpp','Linux' ],
+        awards: [
+            {
+            award: 'Biggest Failure Award',
+            year: 2010,
+            by: 'MIT'
+            }
+        ]
+    })
+    LanceBio.save();
 
     //creating schema for anime collection
     const animeSchema = new mongoose.Schema({
@@ -54,31 +54,31 @@ mongoose.connect('mongodb://localhost:27017/test')
     const Anime = new mongoose.model('Anime',animeSchema);
     
     //adding multiple entries into anime
-    // Anime.insertMany([
-    //     {
-    //         id: 32281,
-    //         title: "Kimi no Na wa.",
-    //         main_picture: {
-    //         medium: "https://myanimelist.cdn-dena.com/images/anime/5/87048.jpg",
-    //         large: "https://myanimelist.cdn-dena.com/images/anime/5/87048l.jpg"
-    //         }
-    //     },
-    //     {
-    //         id: 30484,
-    //         title: "Steins;Gate 0",
-    //         main_picture: {
-    //         medium: "https://myanimelist.cdn-dena.com/images/anime/1031/90444.jpg",
-    //         large: "https://myanimelist.cdn-dena.com/images/anime/1031/90444l.jpg"
-    //         }
-    //     },
-    //     {
-    //             title: "Gintama°",
-    //             main_picture: {
-    //             medium: "https://myanimelist.cdn-dena.com/images/anime/3/72078.jpg",
-    //             large: "https://myanimelist.cdn-dena.com/images/anime/3/72078l.jpg"    
-    //         }
-    //     }
-    // ])
+    Anime.insertMany([
+        {
+            id: 32281,
+            title: "Kimi no Na wa.",
+            main_picture: {
+            medium: "https://myanimelist.cdn-dena.com/images/anime/5/87048.jpg",
+            large: "https://myanimelist.cdn-dena.com/images/anime/5/87048l.jpg"
+            }
+        },
+        {
+            id: 30484,
+            title: "Steins;Gate 0",
+            main_picture: {
+            medium: "https://myanimelist.cdn-dena.com/images/anime/1031/90444.jpg",
+            large: "https://myanimelist.cdn-dena.com/images/anime/1031/90444l.jpg"
+            }
+        },
+        {
+                title: "Gintama°",
+                main_picture: {
+                medium: "https://myanimelist.cdn-dena.com/images/anime/3/72078.jpg",
+                large: "https://myanimelist.cdn-dena.com/images/anime/3/72078l.jpg"    
+            }
+        }
+    ])
 })
 .catch(err => console.log(err))
 

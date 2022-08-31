@@ -4,7 +4,7 @@ const PORT = 3000
 // The following lines are required to define __dirname which doesn't exist in ESM but used to work in CommonJS
 import * as url from 'url';
 import path from 'path'
-const __filename = url.fileURLToPath(import.meta.url);
+// const __filename = url.fileURLToPath(import.meta.url);
 const __dirname = url.fileURLToPath(new URL('.', import.meta.url));
 
 //Express setup
