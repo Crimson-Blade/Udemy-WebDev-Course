@@ -1,17 +1,53 @@
 const mongoose = require('mongoose');
-const Product = require('./models/product')
+const Product = require('./models/product');
 
-// Connecting to MongoDB
-mongoose.connect('mongodb://localhost:27017/FarmDB')
-.then(()=>{
-    console.log('Connected to Mongo');
-})
-.catch((err)=>{
-    console.log(err);
-})
+mongoose.connect('mongodb://localhost:27017/farmStand', { useNewUrlParser: true, useUnifiedTopology: true })
+    .then(() => {
+        console.log("MONGO CONNECTION OPEN!!!")
+    })
+    .catch(err => {
+        console.log("OH NO MONGO CONNECTION ERROR!!!!")
+        console.log(err)
+    })
 
-// Seeding Database
 
-Product.insertMany([
-    
-])
+const seedProducts = [
+    // {
+    //     name: 'Fairy Eggplant',
+    //     price: 1.00,
+    //     category: 'vegetable'
+    // },
+    {
+        name: 'Organic Goddess Melon',
+        price: 4.99,
+        category: 'fruit'
+    },
+    {
+        name: 'Organic Mini Seedless Watermelon',
+        price: 3.99,
+        category: 'fruit'
+    },
+    {
+        name: 'Organic Celery',
+        price: 1.50,
+        category: 'vegetable'
+    },
+    {
+        name: 'Chocolate Whole Milk',
+        price: 2.69,
+        category: 'dairy'
+    },
+    {
+        name: 'Ruby Grapefruit',
+        price: 1.99,
+        category: 'fruit'
+    }
+]
+
+Product.insertMany(seedProducts)
+    .then(res => {
+        console.log(res)
+    })
+    .catch(e => {
+        console.log(e)
+    })
