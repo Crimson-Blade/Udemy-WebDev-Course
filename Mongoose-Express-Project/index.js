@@ -28,7 +28,8 @@ mongoose.connect('mongodb://localhost:27017/farmStand')
 .catch((err)=>{
     console.log(err);
 })
-
+// Pulling list of categories for ejs
+const categories = Product.schema.path('category').enumValues
 // Implementing CRUD using Mongoose and Express
 // index
 app.get('/products', async (req,res) => {
@@ -43,11 +44,11 @@ app.get('/product/:id',async (req,res)=>{
     res.render('products/show', {product});
 
 })
-// create
+// new
 app.get('/products/new', async (req,res)=>{
-    res.render('products/new');
+    res.render('products/new', {categories});
 })
-// 
+// new
 app.post('/products', async (req,res)=>{
     console.log(req.body);
     let product;
@@ -60,15 +61,22 @@ app.post('/products', async (req,res)=>{
         
     res.redirect('products/new')
 })
+// update
 app.get('/product/:id/update', async (req,res) =>{
     const product = await Product.findById(req.params.id);
-    res.render('products/update', {product});
+    res.render('products/update', {product, categories});
 })
 app.put('/product/:id', async (req,res)=>{
     const data = req.body;
     await Product.findOneAndUpdate({_id:req.params.id},data,{runValidators:true, new:true})
     res.redirect(`/product/${req.params.id}`)
 })
+// delete
+app.delete('/product/:id/', async (req,res)=>{
+    console.log('here!');
+     await Product.findOneAndDelete({_id:req.params.id})
+    res.redirect('/products')
+})
 app.get('*', (req,res)=>{
     res.sendStatus(404);
-})
+})  
