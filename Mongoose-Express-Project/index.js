@@ -30,6 +30,15 @@ mongoose.connect('mongodb://localhost:27017/farmStand')
 })
 // Pulling list of categories for ejs
 const categories = Product.schema.path('category').enumValues
+
+// Async Wrapper for error handling
+const wrapAsync = (fn) => {
+    return function(req, res, next){
+        console.log('wrapAsync called');
+        fn(req, res).catch(e => next(e));
+    }
+}
+
 // Implementing CRUD using Mongoose and Express
 // index
 app.get('/products', async (req,res) => {
@@ -37,16 +46,20 @@ app.get('/products', async (req,res) => {
     const Products = await Product.find({});
     res.render('products/index',{Products})
 })
-// show`
-app.get('/product/:id',async (req,res)=>{
+// show
+app.get('/product/:id',wrapAsync(async (req,res)=>{
     console.log("GET /products/show");
     const product = await Product.findById( req.params.id);
     res.render('products/show', {product});
-
-})
+}))
 // new
-app.get('/products/new', async (req,res)=>{
-    res.render('products/new', {categories});
+app.get('/products/new', async (req,res,next)=>{
+    try{
+        res.render('products/new', {categories});
+    }
+    catch(e){
+        next(e)
+    }
 })
 // new
 app.post('/products', async (req,res)=>{
@@ -58,7 +71,6 @@ app.post('/products', async (req,res)=>{
         res.redirect(`product/${product._id}`);
     }
     else
-        
     res.redirect('products/new')
 })
 // update
@@ -72,10 +84,19 @@ app.put('/product/:id', async (req,res)=>{
     res.redirect(`/product/${req.params.id}`)
 })
 // delete
-app.delete('/product/:id/', async (req,res)=>{
-    console.log('here!');
-     await Product.findOneAndDelete({_id:req.params.id})
-    res.redirect('/products')
+app.delete('/product/:id/', async (req,res,next)=>{
+    try{
+        console.log('here!');
+        await Product.findOneAndDelete({_id:req.params.id})
+        res.redirect('/products')
+    } catch(e){
+        next(e)
+    }
+})
+app.use((err,req,res,next) => {
+    const { statusCode = 500, message = 'Something went wrong'} = err;
+    res.sendStatus(statusCode).send(message);
+    next();
 })
 app.get('*', (req,res)=>{
     res.sendStatus(404);
